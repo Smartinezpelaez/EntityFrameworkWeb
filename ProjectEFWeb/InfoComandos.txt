@@ -1,0 +1,29 @@
+﻿Para validar si la herramienta esta instalada
+dotnet ef
+
+Comando para instalar la herramienta de EF
+1.dotnet tool install --global dotnet-ef
+
+instalar EF Design y Tools
+EntityFramework.tools
+2.dotnet add package Microsoft.EntityFrameworkCore.Design --version 6.0.5
+
+Comando para actualizar la herramienta
+3. dotnet tool update --global dotnet-ef
+
+
+Cada migración debe de tener un nombre descriptivo despues de migrar se debe actualizar
+4. dotnet ef migrations add InitialCreate or FirstMigration
+ /Primera Migracion*/ 
+ add-migration InitialCreate or FirstMigration or (add-migration NombreMigracion -s DataAccess)
+
+ /Actualizar Migracion*/ update-database add-migration AddData update-database
+
+
+Si queremos utilizar migrations en producción debemos hacerlo una vez que se haya terminado el esquema,
+o sea mientras no hayan datos.
+Cada vez que agreguemos una migración debemos usar el comando:
+5. dotnet ef database update
+
+Para remover una migracion 
+6. Remove-Migration
